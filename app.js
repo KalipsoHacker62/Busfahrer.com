@@ -10,7 +10,7 @@ var Joueur = function(name, carteDuJoueur, numeroJoueur, text){
 
 
 
-var tableauValeurCarte, cartesDonne, cartesPrend, cartesCentrales, tableauDeCarte, test, joueur, nomDuJoueur, nombreJoueur, joueurs, tour, round, nombreDeTour, cartesDuMilieu, tourTotal, playing;
+var tableauValeurCarte, cartesDonne, cartesPrend, cartesCentrales, tableauDeCarte, test, joueur, nomDuJoueur, nombreJoueur, joueurs, tour, round, nombreDeTour, cartesDuMilieu, tourTotal, playing, skinCarte, skin, nombreDeSkin, aff, tableauDeCarteTire;
 
 
 init0();
@@ -41,15 +41,17 @@ function getCartesCentrales(){
 
 
 document.querySelector('.btn-new').addEventListener('click', function(){
-    init();
+    
 });
-   
+
+
+
 
 
     document.querySelector('.btn-draw').addEventListener('click', function(){
-            if(playing===true){
+        if(playing===true){
 
-                    partieEnCours.carte=tirageCarte();
+                partieEnCours.carte=tirageCarte();
                 stockageCarte(getTour(), getRound(), getTourTotal());
                 clearText();
             
@@ -57,7 +59,7 @@ document.querySelector('.btn-new').addEventListener('click', function(){
                     init0();
                 }
             }
-            
+           
 
             
     
@@ -77,9 +79,7 @@ function tirageCarte(){
     var laCarte=tableauDeCarte[partieEnCours.tourTotal];
     var dice1DOM= document.getElementById('card');
     dice1DOM.style.display = 'block';
-    dice1DOM.src ='img/'+ laCarte + '.jpg';
-    
-    
+    dice1DOM.src ='img/'+skin+'/'+ laCarte + '.png';
     return laCarte;
 
 }
@@ -93,20 +93,19 @@ function stockageCarte(tour, round, tourTotal){
     
 
     if (round<4){
-        
         joueurs[tour].carteDuJoueur[round]=valeurDuneCarte(partieEnCours.carte);
         mainDOM.style.display='block';
-        mainDOM.src= 'img/'+partieEnCours.carte+'.jpg';
+        mainDOM.src= 'img/'+skin+'/'+partieEnCours.carte+'.png';
 
         
     }else if(round===4){
         var resetDOM=document.getElementById('mCarte-'+0);
             resetDOM.style.display='block';
-            resetDOM.src='img/'+partieEnCours.carte+'.jpg';
+            resetDOM.src='img/'+skin+'/'+partieEnCours.carte+'.png';
         for(i=1; i<=13;i++){
             resetDOM=document.getElementById('mCarte-'+i);
             resetDOM.style.display='block';
-            resetDOM.src='img/0.jpg';
+            resetDOM.src='img/'+skin+'/0.png';
         }
         round++;
     }else if(round>=4 && tour<=13){
@@ -114,7 +113,7 @@ function stockageCarte(tour, round, tourTotal){
         document.getElementById('comment').textContent='';
         document.getElementById('comment2').textContent='';
         croupierDOM.style.display='block';
-        croupierDOM.src= 'img/'+partieEnCours.carte+'.jpg';
+        croupierDOM.src= 'img/'+skin+'/'+partieEnCours.carte+'.png';
 
         var rest = tour%2;
         if (rest===0){
@@ -275,6 +274,19 @@ function clearText(){
 }
 
 
+function choixSkin(skinCarte){
+
+    switch (true){
+        case skinCarte===1:
+            skin="noir";
+            break;
+        case skinCarte===2:
+            skin="rouge";
+            break;
+    }
+    return skin;
+}
+
 
 
 
@@ -316,11 +328,15 @@ function init0(){
     partieEnCours = new Partie (0, 0, 0, 0, [], [], []);
     playing=false;
     test=0;
+    nombreDeSkin=2;
     document.getElementById('btn-new').textContent='New Game';
     document.getElementById('comment').textContent='Busfahrer';
     document.getElementById('comment2').textContent='Un jeu allemand';
     tableauDeCarte=[];
+    tableauDeCarteTire=[];
+    
     cartesCentrales=0;
+    skin="noir";
     nomDuJoueur='';
     nombreJoueur='';
     joueurs=[];
@@ -352,40 +368,143 @@ function init0(){
         imgInit.src='';
     }
     imgInit=document.getElementById('card');
-    imgInit.src='img/0.jpg';
+    imgInit.src='img/'+skin+'/0.png';
 
 
     
     
 }
+
+
 
 function init(){
     init0();
     playing=true;
     document.getElementById('btn-new').textContent='';
-
     document.getElementById('comment').textContent='';
     document.getElementById('comment2').textContent='';
-    nombreJoueur=parseInt(prompt('Rentrez le nombre de joueurs'));
-    nombreDeTour= nombreJoueur*4;
-    for (i=0; i<nombreJoueur; i++){
-        
 
-        nomDuJoueur=prompt('Rentrez le nom du joueur '+(i+1));
+    
+    
+}
+
+//boutons
+
+document.getElementById('btn-partie').addEventListener('click', function(){
+
+    init();
+    for(i=0;i<8;i++){
+        if((document.getElementById('nombreJoueur-'+i).checked)){
+            nombreJoueur=(document.getElementById('nombreJoueur-'+i).value);
+            nombreJoueur++;
+        }
+    }
+    nombreDeTour=nombreJoueur*4;
+
+    for (i=0; i<nombreJoueur; i++){
+        nomDuJoueur=document.getElementById('nomSelect-'+i).value;
+        console.log(nomDuJoueur);
         document.getElementById('name-'+i).textContent=nomDuJoueur;
         for(j=0; j<4; j++){
             var img=document.getElementById('J'+i+'-carte'+(j+1));
-            img.src='img/0.jpg';
+            img.src='img/'+skin+'/0.png';
         }
-        carteDuJoueur=[];
+
+        carteDuJoueur=[0, 0, 0, 0];
         var joueur = new Joueur(nomDuJoueur, carteDuJoueur, i, '');
         joueurs[i]=joueur;
 
     }
-}
 
 
 
 
+
+});
+
+
+document.getElementById('btn-skin').addEventListener('click', function(){
+
+    for(i=0; i<nombreDeSkin; i++){
+ 
+        if((document.getElementById('skinSelected-'+i).selected)){
+            skinCarte=(document.getElementById('nombreJoueur-'+i).value);
+            skinCarte++;
+        }
+    }
+  
+    choixSkin(skinCarte);
+    var tab=carteTirees()
+    afficheurCartes(tab);
+   
+   
+
+        
+
+    });
+
+    function afficheurCartes(tab){
+        console.log(tab);
+        var h=0;
+        var piocheDOM= document.getElementById('card');
+        piocheDOM.style.display='block';
+        piocheDOM.src= 'img/'+skin+'/0.png';
+
+        if(getTourTotal()<nombreJoueur*4){
+            while(h<(nombreJoueur*4)){
+                for(j=0;j<4; j++){
+                    for(i=0; i<nombreJoueur; i++){
+                        var aff=document.getElementById('J'+i+'-carte'+(j+1));
+                        aff.src='img/'+skin+'/'+tab[h]+'.png';
+                        h++;
+                    }
+                }
+            }
+        }else if (getTourTotal()>=nombreJoueur*4){
+            for(j=0;j<4; j++){
+                for(i=0; i<nombreJoueur; i++){
+                    aff=document.getElementById('J'+i+'-carte'+(j+1));
+                    aff.src='img/'+skin+'/'+tab[h]+'.png';
+                    h++;
+                }
+            }
+            
+            for(u=0; u<14;u++){
+                var iff=document.getElementById('mCarte-'+u);
+                var dot = u%2;
+                if(dot===0){
+                    iff.src='img/'+skin+'/'+(tab[h])+'.png';
+                }else if(dot===1){
+                    iff.src='img/'+skin+'/'+(tab[h])+'.png';
+                }
+                h++;
+            }
+
+        }
+
+        
+        
+                
+                
+         
+                
+      
+            }
+            
     
+
+
+
+function carteTirees(){
+    
+    for(i=0; i<52; i++){
+        tableauDeCarteTire[i]=0;
+    }
+    for(i=0; i<getTourTotal(); i++){
+        tableauDeCarteTire[i]=tableauDeCarte[i];
+    }
+    return tableauDeCarteTire;
+   
+
+}
 
