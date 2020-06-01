@@ -67,6 +67,95 @@
             }
         }
     }
+        &__apparences{
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10%;
+            margin-bottom: 9%;
+
+            &-left{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10%;
+                margin-bottom: 9%;
+            }
+            
+            &-entete{
+                margin-top: 2%;
+                margin-left: 5%;
+                margin-bottom: 2rem;;
+            }
+            &-btn-skin{
+                color: $color-corail;
+                font-size: 4rem;
+                
+            }
+            &-selector{
+                margin-top: 5rem;
+                margin-left: 5rem;
+                font-size: 3rem;
+            }
+
+        }
+        &__premium{
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10%;
+            margin-bottom: 9%;
+
+            &-left{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10%;
+                margin-bottom: 9%;
+            }
+            &-right{
+               
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+
+        }
+
+        &__new{
+            
+
+            
+            
+            &-left{
+                display: flex;
+                flex-direction: column;
+            }
+        
+
+            &-entete{
+                
+                margin-left: 3%;
+                margin-top: 2%;
+            }
+            &-form{
+                margin-top: 5rem;
+                margin-left: 3%;
+            }
+            &-btn-partie{
+                color: $color-corail;
+                font-size: 4rem;
+                margin-left: 6rem;
+            }
+
+        }
 
     &:target{
         opacity: 1;

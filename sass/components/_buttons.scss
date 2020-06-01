@@ -58,3 +58,25 @@
 .btn-new:active::after{
     background: none;
 }
+
+.btn-partie{
+    opacity:1;
+
+    &-test{
+        opacity:0;
+        visibility: hidden;
+    }
+    
+   
+    
+}
+.btn-skin{
+    opacity:1;
+    
+    &-test{
+        opacity:0;
+        visibility: hidden;
+    }
+   
+   
+}
