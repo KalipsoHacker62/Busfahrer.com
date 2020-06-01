@@ -55,7 +55,7 @@ h2 {
 h3 {
   color: #ce2e2e;
   text-transform: uppercase;
-  line-height: 50%; }
+  line-height: 90%; }
 
 .btn-box {
   position: absolute;
@@ -98,6 +98,18 @@ h3 {
 
 .btn-new:active::after {
   background: none; }
+
+.btn-partie {
+  opacity: 1; }
+  .btn-partie-test {
+    opacity: 0;
+    visibility: hidden; }
+
+.btn-skin {
+  opacity: 1; }
+  .btn-skin-test {
+    opacity: 0;
+    visibility: hidden; }
 
 .card {
   max-width: 20rem; }
@@ -251,6 +263,63 @@ h3 {
       color: white;
       background-color: #EB4D4D;
       box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.3); }
+  .popup__apparences {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 9%; }
+    .popup__apparences-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10%;
+      margin-bottom: 9%; }
+    .popup__apparences-entete {
+      margin-top: 2%;
+      margin-left: 5%;
+      margin-bottom: 2rem; }
+    .popup__apparences-btn-skin {
+      color: #EB4D4D;
+      font-size: 4rem; }
+    .popup__apparences-selector {
+      margin-top: 5rem;
+      margin-left: 5rem;
+      font-size: 3rem; }
+  .popup__premium {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 9%; }
+    .popup__premium-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10%;
+      margin-bottom: 9%; }
+    .popup__premium-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center; }
+  .popup__new-left {
+    display: flex;
+    flex-direction: column; }
+  .popup__new-entete {
+    margin-left: 3%;
+    margin-top: 2%; }
+  .popup__new-form {
+    margin-top: 5rem;
+    margin-left: 3%; }
+  .popup__new-btn-partie {
+    color: #EB4D4D;
+    font-size: 4rem;
+    margin-left: 6rem; }
   .popup:target {
     opacity: 1;
     visibility: visible;
