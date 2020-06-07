@@ -247,17 +247,18 @@
         <div class="popup__content">
             <a href="#navi-toggle" class="popup__close">&times</a>
             <div class="popup__langue-left">
+                <div class="popup__langue-entete">
+                    <h2 class="heading-secondary">Langues</h2>
+                    <h3 class="heading-tertiary">Choisissez votre langue</h3>
+                </div>
+
                 <img src="img/DE.jpg" alt="drapeau allemand" class="popup__langue-img">
                 <img src="img/EN.jpg" alt="drapeau anglais" class="popup__langue-img">
                 <img src="img/FR.jpg" alt="drapeau français" class="popup__langue-img">
             </div>
             <div class="popup__langue-right">
                 
-                <div class="popup__langue-entete">
-                    
-                <h2 class="heading-secondary">Langues</h2>
-                <h3 class="heading-tertiary">Choisissez votre langue</h3>
-                </div>
+                
                 <div class="popup__langue-btn">
                     <a href="#" class="popup__langue-text">Deutsch</a>
                     <a href="#" class="popup__langue-text">English</a>
@@ -283,7 +284,7 @@
                 </div>
                 <div class="popup__apparences-selector">
 
-                    <form action="results.php" method="POST" class="skin" id="skinSelection">
+                    <form action="results.php" method="POST" class="__apparences-form" id="skinSelection">
                         <select class="popup__apparences-selector" name="skin" id="skin">
                             <option value="1" id="skinSelected-0">Noir</option>
                             <option value="2" id="skinSelected-1">Blanc</option>
@@ -324,7 +325,7 @@
     <div class="popup" id="popup__new">
         
         <div class="popup__content">
-                <a href="#btn-toggle" class="popup__close">&times</a>
+                <a href="#btn-toggle" class="popup__close" id="popup-close">&times</a>
 
                 
             
@@ -355,7 +356,7 @@
                     <input type="text" name="nom-joueur-6" placeholder="Joueur 7" id=nomSelect-6><br>
                     8 <input type="radio" name="nombreJoueur" value="7" id="nombreJoueur-7">
                     <input type="text" name="nom-joueur-7" placeholder="Joueur 8" id=nomSelect-7><br> 
-                    <label href="#" for="btn-partie" class="popup__new-btn-partie">OK</label>
+                    <label for="btn-partie" class="popup__new-btn-partie">Enregistrer</label>
                     
                 </form>
             </div>
