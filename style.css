@@ -83,7 +83,7 @@ h3 {
 .btn-new:hover {
   transform: translate(-0.1rem);
   background-color: #fff;
-  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 2rem 3rem rgba(92, 76, 76, 0.3); }
 
 .btn-new:active {
   font-size: 0; }
@@ -143,22 +143,25 @@ h3 {
     .player-panel-0__cards {
       display: flex;
       justify-content: center;
-      margin-right: .7rem;
-      margin-bottom: 0.7rem; }
+      align-items: center;
+      margin-bottom: 0.7rem;
+      margin-right: .7rem; }
   .player-panel-1 {
     display: flex;
     flex-direction: column; }
     .player-panel-1__cards {
       display: flex;
       justify-content: center;
+      align-items: center;
       margin-bottom: 0.7rem; }
   .player-panel-2 {
     display: flex;
     flex-direction: column; }
     .player-panel-2__cards {
       display: flex;
-      margin-bottom: 0.7rem;
       justify-content: center;
+      align-items: center;
+      margin-bottom: 0.7rem;
       margin-right: .7rem; }
   .player-panel-3 {
     display: flex;
@@ -166,6 +169,7 @@ h3 {
     .player-panel-3__cards {
       display: flex;
       justify-content: center;
+      align-items: center;
       margin-bottom: 0.7rem; }
   .player-panel-4 {
     display: flex;
@@ -173,6 +177,7 @@ h3 {
     .player-panel-4__cards {
       display: flex;
       justify-content: center;
+      align-items: center;
       margin-bottom: 0.7rem;
       margin-right: .7rem; }
   .player-panel-5 {
@@ -181,6 +186,7 @@ h3 {
     .player-panel-5__cards {
       display: flex;
       justify-content: center;
+      align-items: center;
       margin-bottom: 0.7rem; }
   .player-panel-6 {
     display: flex;
@@ -188,6 +194,7 @@ h3 {
     .player-panel-6__cards {
       display: flex;
       justify-content: center;
+      align-items: center;
       margin-bottom: 0.7rem;
       margin-right: .7rem; }
   .player-panel-7 {
@@ -196,6 +203,7 @@ h3 {
     .player-panel-7__cards {
       display: flex;
       justify-content: center;
+      align-items: center;
       margin-bottom: 0.7rem; }
 
 .player-name {
@@ -228,40 +236,47 @@ h3 {
   visibility: hidden;
   transition: all .3s; }
   .popup__langue-left {
+    position: fixed;
+    top: 2%;
+    left: 1%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 10%;
-    margin-bottom: 9%; }
+    align-items: center; }
   .popup__langue-right {
-    display: flex;
-    flex-direction: column; }
+    position: fixed;
+    top: 22%;
+    left: 40%; }
   .popup__langue-img {
     display: block;
     width: 30%;
-    border-radius: 100rem; }
+    border-radius: 100rem;
+    margin-bottom: 1rem; }
   .popup__langue-btn {
-    width: 50%;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin-bottom: 30%; }
+    justify-content: space-between; }
   .popup__langue-entete {
-    margin-bottom: 10%; }
+    margin-bottom: 10%;
+    min-width: 100%; }
   .popup__langue-text {
+    cursor: pointer;
+    color: #EB4D4D;
+    font-size: 4rem;
+    text-transform: uppercase;
+    background: none;
     text-align: center;
-    color: #333; }
-    .popup__langue-text:link, .popup__langue-text:visited {
-      font-size: 2rem;
-      text-transform: uppercase;
-      text-decoration: none; }
-    .popup__langue-text:hover, .popup__langue-text:active {
-      transform: translate(-0.1rem);
-      border-radius: 100px;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    font-size: 2.7rem;
+    transition: .2s;
+    text-decoration: none;
+    margin-bottom: 15%; }
+    .popup__langue-text:hover {
       color: white;
       background-color: #EB4D4D;
+      border-radius: 100px;
+      transform: translate(-0.1rem);
       box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.3); }
   .popup__apparences {
     display: flex;
@@ -280,14 +295,33 @@ h3 {
     .popup__apparences-entete {
       margin-top: 2%;
       margin-left: 5%;
-      margin-bottom: 2rem; }
+      margin-bottom: 2rem;
+      min-width: 100%; }
     .popup__apparences-btn-skin {
+      cursor: pointer;
       color: #EB4D4D;
-      font-size: 4rem; }
+      font-size: 4rem;
+      text-transform: uppercase;
+      background: none;
+      text-align: center;
+      padding: 1.5rem 4rem;
+      border-radius: 10rem;
+      font-size: 2.7rem;
+      transition: .2s;
+      text-decoration: none;
+      position: fixed;
+      bottom: 2.5rem;
+      left: 2%; }
+      .popup__apparences-btn-skin:hover {
+        color: white;
+        background-color: #EB4D4D;
+        border-radius: 100px;
+        transform: translate(-0.1rem);
+        box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.3); }
     .popup__apparences-selector {
-      margin-top: 5rem;
-      margin-left: 5rem;
-      font-size: 3rem; }
+      font-size: 2rem;
+      margin-left: 17%;
+      margin-top: 15%; }
   .popup__premium {
     display: flex;
     flex-direction: column;
@@ -304,22 +338,41 @@ h3 {
       margin-bottom: 9%; }
     .popup__premium-right {
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      text-align: center; }
+      align-items: center;
+      flex-direction: column; }
   .popup__new-left {
     display: flex;
     flex-direction: column; }
   .popup__new-entete {
+    min-width: 100%;
     margin-left: 3%;
     margin-top: 2%; }
   .popup__new-form {
-    margin-top: 5rem;
-    margin-left: 3%; }
+    padding: 12%;
+    padding-left: 14%; }
   .popup__new-btn-partie {
+    cursor: pointer;
     color: #EB4D4D;
     font-size: 4rem;
-    margin-left: 6rem; }
+    text-transform: uppercase;
+    background: none;
+    text-align: center;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    font-size: 2.7rem;
+    transition: .2s;
+    text-decoration: none;
+    position: fixed;
+    bottom: 2.5rem;
+    left: 2%;
+    margin-top: 3rem; }
+    .popup__new-btn-partie:hover {
+      color: white;
+      background-color: #EB4D4D;
+      border-radius: 100px;
+      transform: translate(-0.1rem);
+      box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.3); }
   .popup:target {
     opacity: 1;
     visibility: visible;
