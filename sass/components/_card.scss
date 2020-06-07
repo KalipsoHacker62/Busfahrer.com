@@ -11,15 +11,11 @@
     flex-direction: column;
 
     &__1{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter;
     }
     
     &__2{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter;
     }
 }
 .mcarte{

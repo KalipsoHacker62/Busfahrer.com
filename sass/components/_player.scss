@@ -10,10 +10,9 @@
             flex-direction: column;
 
             &__cards{
-                display: flex;
-                justify-content: center;
+                @include playerCards;
                 margin-right: .7rem;
-                margin-bottom: $card-margin-bottom;
+               
             }
         }
 
@@ -22,9 +21,7 @@
            flex-direction: column;
 
             &__cards{
-                display: flex;
-                justify-content: center;
-                margin-bottom: $card-margin-bottom;
+                @include playerCards;
             
 
         }
@@ -35,9 +32,7 @@
             flex-direction: column;
 
             &__cards{
-                display: flex;
-                margin-bottom: $card-margin-bottom;
-                justify-content: center;
+                @include playerCards;
                 margin-right: .7rem;
                 
         }
@@ -47,9 +42,7 @@
             flex-direction: column;
 
             &__cards{
-                display: flex;
-                justify-content: center;
-                margin-bottom: $card-margin-bottom;
+                @include playerCards;
                 
                 
         }
@@ -59,9 +52,7 @@
             flex-direction: column;
 
             &__cards{
-                display: flex;
-                justify-content: center;
-                margin-bottom: $card-margin-bottom;
+                @include playerCards;
                 margin-right: .7rem;
                
         }
@@ -72,9 +63,7 @@
             flex-direction: column;
 
             &__cards{
-                display: flex;
-                justify-content: center;
-                margin-bottom: $card-margin-bottom;
+                @include playerCards;
                
                 
         }
@@ -84,9 +73,7 @@
             flex-direction: column;
 
             &__cards{
-                display: flex;
-                justify-content: center;
-                margin-bottom: $card-margin-bottom;
+                @include playerCards;
                 margin-right: .7rem;
               
         }
@@ -96,9 +83,7 @@
             flex-direction: column;
 
             &__cards{
-                display: flex;
-                justify-content: center;
-                margin-bottom: $card-margin-bottom;
+                @include playerCards;
                 
             
         }
