@@ -403,7 +403,7 @@ document.getElementById('btn-partie').addEventListener('click', function(){
 
     for (i=0; i<nombreJoueur; i++){
         nomDuJoueur=document.getElementById('nomSelect-'+i).value;
-        console.log(nomDuJoueur);
+
         document.getElementById('name-'+i).textContent=nomDuJoueur;
         for(j=0; j<4; j++){
             var img=document.getElementById('J'+i+'-carte'+(j+1));
@@ -415,6 +415,8 @@ document.getElementById('btn-partie').addEventListener('click', function(){
         joueurs[i]=joueur;
 
     }
+
+    
 
 
 
@@ -444,13 +446,13 @@ document.getElementById('btn-skin').addEventListener('click', function(){
     });
 
     function afficheurCartes(tab){
-        console.log(tab);
         var h=0;
         var piocheDOM= document.getElementById('card');
         piocheDOM.style.display='block';
         piocheDOM.src= 'img/'+skin+'/0.png';
 
-        if(getTourTotal()<nombreJoueur*4){
+        if(getTourTotal()<nombreJoueur*4 && getTourTotal()>0){
+            
             while(h<(nombreJoueur*4)){
                 for(j=0;j<4; j++){
                     for(i=0; i<nombreJoueur; i++){
@@ -460,7 +462,8 @@ document.getElementById('btn-skin').addEventListener('click', function(){
                     }
                 }
             }
-        }else if (getTourTotal()>=nombreJoueur*4){
+        }else if (getTourTotal()>=nombreJoueur*4 && getTourTotal()>0){
+            
             for(j=0;j<4; j++){
                 for(i=0; i<nombreJoueur; i++){
                     aff=document.getElementById('J'+i+'-carte'+(j+1));
